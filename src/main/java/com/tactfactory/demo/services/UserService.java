@@ -12,10 +12,18 @@ import com.tactfactory.demo.repositories.UserRepository;
 public class UserService {
 
 	@Autowired
+	private RoleService roleService;
+	
+	@Autowired
 	private UserRepository repository;
 
 	public List<User> findAll() {
 		return this.repository.findAll();
+	}
+	
+	public User findById(long id) {
+		return this.repository.findById(id).orElse(null);
+
 	}
 
 //	public void save(User user) {
@@ -25,9 +33,10 @@ public class UserService {
 	public void generateUsers(final Integer nb) {
 		for (int i = 0; i < nb; i++) {
 			User user = new User();
+			
 			user.setFirstname("fname"+i);
 			user.setLastname("Lname"+i);
-
+			user.setRole(roleService.getRandomRole());
 			this.repository.save(user);
 		}
 	}

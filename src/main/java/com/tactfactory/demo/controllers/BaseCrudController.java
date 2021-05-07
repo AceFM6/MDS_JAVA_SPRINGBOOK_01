@@ -29,7 +29,7 @@ public abstract class BaseCrudController<T extends BaseEntity, DTO> {
     public BaseCrudController(String templateName) {
         this.TEMPLATE_NAME = templateName;
         this.REDIRECT_INDEX = "redirect:" + "/" + this.TEMPLATE_NAME + INDEX_ROUTE;
-        this.REDIRECT_CREATE = "redirect:" + "/" + this.TEMPLATE_NAME + CREATE_ROUTE;
+        this.REDIRECT_CREATE = "redirect:" + "/" + this.TEMPLATE_NAME + CREATE_ROUTE;        
     }
 
     @Autowired

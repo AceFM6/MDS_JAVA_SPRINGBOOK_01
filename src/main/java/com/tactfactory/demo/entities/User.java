@@ -25,7 +25,15 @@ public class User extends BaseEntity {
     @OneToMany
     private List<Book> books;
 
-    public String getFirstname() {
+    public List<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
+	}
+
+	public String getFirstname() {
         return firstname;
     }
 
@@ -49,7 +57,4 @@ public class User extends BaseEntity {
         this.role = role;
     }
 
-	public void addBook(Book book) {
-		this.books.add(book);
-	}
 }

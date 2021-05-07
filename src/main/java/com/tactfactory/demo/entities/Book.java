@@ -9,8 +9,10 @@ public class Book extends BaseEntity {
 		@Column(nullable = false)
 		private String name;
 		
-		private int NbPage;
+		@Column(nullable = false)
+		private int nbPage;
 		
+		@Column(nullable = false)
 		private float price;
 		
 		public String getName() {
@@ -22,19 +24,19 @@ public class Book extends BaseEntity {
 		}
 		
 		public int getNbPage() {
-			return NbPage;
+			return nbPage;
 		}
 		
 		public void setNbPage(int nbPage) {
-			NbPage = nbPage;
+			this.nbPage = nbPage;
 		}
 		
 		public float getPrice() {
 			return price;
 		}
 		
-		public void setPrice(float page) {
-			this.price = page;
+		public void setPrice(float price) {
+			this.price = price;
 		}
 			
 }
